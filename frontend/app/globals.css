@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAFAFC;
+  --foreground: #0B1120;
+
+  /* Brand accent — indigo to violet */
+  --accent-start: #6366F1;
+  --accent-end: #8B5CF6;
+  --accent-cyan: #22D3EE;
+
+  /* Category accents */
+  --cat-documents: #6366F1;
+  --cat-images: #14B8A6;
+  --cat-data: #F59E0B;
+
+  --border-soft: #E7E7F0;
+  --surface: #FFFFFF;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent-start: var(--accent-start);
+  --color-accent-end: var(--accent-end);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-cat-documents: var(--cat-documents);
+  --color-cat-images: var(--cat-images);
+  --color-cat-data: var(--cat-data);
+  --color-border-soft: var(--border-soft);
+  --color-surface: var(--surface);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-sora);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--border-soft);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-rise {
+  animation: hero-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-rise-delay-1 { animation-delay: 0.08s; }
+.hero-rise-delay-2 { animation-delay: 0.16s; }
+.hero-rise-delay-3 { animation-delay: 0.24s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise {
+    animation: none;
+  }
 }

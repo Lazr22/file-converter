@@ -1,24 +1,27 @@
 import FileDropzone from '@/components/FileDropzone';
 
-const ACCENT = '#14B8A6';
+const ACCENT = '#F59E0B';
 
-export default function ImageToPdfPage() {
+export default function ExcelToPdfPage() {
     return (
         <main className="max-w-4xl mx-auto py-16 sm:py-20 px-6">
             <div className="text-center">
                 <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: `${ACCENT}14`, color: ACCENT }}>
-                    Images
+                    Data
                 </span>
-                <h1 className="font-display font-extrabold text-3xl sm:text-4xl text-foreground mb-3">Convert Image to PDF</h1>
+                <h1 className="font-display font-extrabold text-3xl sm:text-4xl text-foreground mb-3">Convert Excel to PDF</h1>
                 <p className="text-foreground/55 max-w-xl mx-auto leading-relaxed">
-                    Turn your JPG and PNG images into a PDF document instantly.
+                    Turn an XLS or XLSX spreadsheet into a print-ready PDF.
                 </p>
             </div>
 
             <FileDropzone
-                endpoint="image-to-pdf"
-                accept={{ 'image/jpeg': ['.jpg', '.jpeg'], 'image/png': ['.png'] }}
-                title="an image"
+                endpoint="excel-to-pdf"
+                accept={{
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx'],
+                    'application/vnd.ms-excel': ['.xls'],
+                }}
+                title="an Excel file"
                 accent={ACCENT}
                 defaultDownloadExt="pdf"
             />

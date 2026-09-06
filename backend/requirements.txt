@@ -3,3 +3,6 @@ uvicorn
 python-multipart
 pdf2docx
 Pillow
+PyMuPDF
+pypdf
+reportlab
