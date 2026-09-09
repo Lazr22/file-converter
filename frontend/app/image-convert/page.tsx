@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import FileDropzone from '@/components/FileDropzone';
+import AdSlot from '@/components/AdSlot';
 
 const ACCENT = '#14B8A6';
 const FORMATS = ['png', 'jpg', 'webp'] as const;
@@ -46,6 +47,8 @@ export default function ImageConvertPage() {
                 extraFields={{ target_format: format }}
                 defaultDownloadExt={format}
             />
+
+            <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_CONVERTER || ''} className="mt-10 min-h-[100px] max-w-2xl mx-auto" />
         </main>
     );
 }

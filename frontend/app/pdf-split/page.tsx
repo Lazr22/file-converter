@@ -1,4 +1,12 @@
+import type { Metadata } from 'next';
 import FileDropzone from '@/components/FileDropzone';
+import AdSlot from '@/components/AdSlot';
+
+export const metadata: Metadata = {
+    title: 'Split PDF Files',
+    description: 'Split a PDF into individual single-page files online, free and instantly.',
+    alternates: { canonical: '/pdf-split' },
+};
 
 const ACCENT = '#6366F1';
 
@@ -22,6 +30,8 @@ export default function PdfSplitPage() {
                 accent={ACCENT}
                 defaultDownloadExt="zip"
             />
+
+            <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_CONVERTER || ''} className="mt-10 min-h-[100px] max-w-2xl mx-auto" />
         </main>
     );
 }

@@ -3,6 +3,7 @@ import {
   FileText, Image as ImageIcon, FileSpreadsheet, FileStack,
   Scissors, Images, FileType2, Table2, ArrowRight,
 } from 'lucide-react';
+import AdSlot from '@/components/AdSlot';
 
 type Converter = {
   href: string;
@@ -123,6 +124,9 @@ export default function Home() {
 
       <Section id="documents" eyebrow="4 tools" title="Documents" items={documents} accent="#6366F1" />
       <Section id="images" eyebrow="3 tools" title="Images" items={images} accent="#14B8A6" />
+
+      <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_HOME || ''} className="my-14 min-h-[100px]" />
+
       <Section id="data" eyebrow="2 tools" title="Data" items={data} accent="#F59E0B" />
     </main>
   );

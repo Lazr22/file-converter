@@ -1,4 +1,12 @@
+import type { Metadata } from 'next';
 import FileDropzone from '@/components/FileDropzone';
+import AdSlot from '@/components/AdSlot';
+
+export const metadata: Metadata = {
+    title: 'Merge PDF Files',
+    description: 'Combine multiple PDF files into a single document online, free and instantly.',
+    alternates: { canonical: '/pdf-merge' },
+};
 
 const ACCENT = '#6366F1';
 
@@ -24,6 +32,8 @@ export default function PdfMergePage() {
                 fieldName="files"
                 defaultDownloadExt="pdf"
             />
+
+            <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_CONVERTER || ''} className="mt-10 min-h-[100px] max-w-2xl mx-auto" />
         </main>
     );
 }

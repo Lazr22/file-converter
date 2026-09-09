@@ -1,4 +1,12 @@
+import type { Metadata } from 'next';
 import FileDropzone from '@/components/FileDropzone';
+import AdSlot from '@/components/AdSlot';
+
+export const metadata: Metadata = {
+    title: 'Image to PDF Converter',
+    description: 'Convert JPG and PNG images to PDF online, free and instantly.',
+    alternates: { canonical: '/image-to-pdf' },
+};
 
 const ACCENT = '#14B8A6';
 
@@ -22,6 +30,8 @@ export default function ImageToPdfPage() {
                 accent={ACCENT}
                 defaultDownloadExt="pdf"
             />
+
+            <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_CONVERTER || ''} className="mt-10 min-h-[100px] max-w-2xl mx-auto" />
         </main>
     );
 }

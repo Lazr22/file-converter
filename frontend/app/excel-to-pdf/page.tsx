@@ -1,4 +1,12 @@
+import type { Metadata } from 'next';
 import FileDropzone from '@/components/FileDropzone';
+import AdSlot from '@/components/AdSlot';
+
+export const metadata: Metadata = {
+    title: 'Excel to PDF Converter',
+    description: 'Convert XLS and XLSX spreadsheets to PDF online, free and instantly.',
+    alternates: { canonical: '/excel-to-pdf' },
+};
 
 const ACCENT = '#F59E0B';
 
@@ -25,6 +33,8 @@ export default function ExcelToPdfPage() {
                 accent={ACCENT}
                 defaultDownloadExt="pdf"
             />
+
+            <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_CONVERTER || ''} className="mt-10 min-h-[100px] max-w-2xl mx-auto" />
         </main>
     );
 }

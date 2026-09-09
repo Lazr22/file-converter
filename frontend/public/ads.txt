@@ -1,0 +1,5 @@
+# Replace pub-0000000000000000 with your real AdSense publisher ID
+# (find it in AdSense under Account > Settings > Account information).
+# This file MUST live at https://yourdomain.com/ads.txt exactly as-is
+# for AdSense to serve ads on this site.
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
